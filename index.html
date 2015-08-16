@@ -5,20 +5,29 @@
 	<meta name="description" content="Catch Towing and Recovery is a roadside assitance and towing business located in West Lawn, Pennsylvania.">
 	<meta name="keywords" content="Towing, Roadside Assistance, Catch, West Lawn, Sinking Spring, Reading, Pennsylvania, PA">
 	<meta name="author" content="Kyle Fox">
+
 	<meta name="viewport" content="width=device-width, user-scalable=false;">
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	
 	<link rel="stylesheet" type="text/css" href="css/styles.css?v=1" />
 </head>
 <body>
 	<div id="main">
 		<div id="title">
-			<img class="full" src="images/logo.png" />
-			<h2 class="nomargin">Towing &amp; Recovery | (484) 955-3431</h2>
+			<img class="full" src="images/logo.png" alt="Catch" />
+			<div class="subTitle">Towing &amp; Recovery</div>
 		</div>
 		<div id="content">
-			<img class="towtruck" src="images/towtruck.png" />
+			<img class="towTruckTablet" src="images/towtruck.png" alt="Tow Truck Image" />
+
 			<div id="info">
-				Catch Towing is a towing and recovery business located in West Lawn, Pennsylvania.  We are a AAA approved rollback service.  You may contact us directly at (484) 955-3431 and still use your AAA membership.  We specialize in the following fields:
+
+				<h2>About Us</h2>
+				<p>Catch Towing is a towing and recovery business located in West Lawn, Pennsylvania.  We are a AAA approved rollback service.  You may contact us directly at <a href="tel:4849553431">(484) 955-3431</a> and still use your AAA membership.</p>
+
+				<img class="towTruckMobile" src="images/towtruck.png" alt="Tow Truck Image" />
+
+				<h2>Services</h2>
 				<ul>
 					<li>Roadside Assistance</li>
 					<li>General Towing</li>
@@ -26,11 +35,45 @@
 					<li>Trailer Towing</li>
 					<li>Equipment Hauling</li>
 				</ul>
-			</div>
 
-			<h2>Contact Us</h2>
-			<div>Please contact Scott at 484-955-3431 for assistance.</div>
+				<h2>Contact Us</h2>
+				<div>Please contact Scott at <a href="tel:4849553431">484-955-3431</a> for assistance.</div>
+			</div>
 		</div>
 	</div>
+	<footer>
+		<span class="phone"><a href="tel:4849553431">(484) 955-3431</a></span>
+		<span class="hours">24 Hour Service</span>
+	</footer>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$(window).resize(function() {
+				pushFooterToViewportBottom();
+			});
+			pushFooterToViewportBottom();
+		});
+
+		/**
+		 * This function will push the footer to the bottom of the viewport if page content isn't
+		 * long enough to keep it down.
+		 */
+		function pushFooterToViewportBottom() {
+			//Reset content div height first
+			var contentDiv = $("#main");
+			contentDiv.css("min-height", 0);
+			
+			//Calculate if change is needed
+			var viewportHeight = $(window).height();
+			var footerBottom = $("footer").get(0).getBoundingClientRect().bottom;
+			var difference = viewportHeight - footerBottom;
+
+			//Only make changes if footer is not beyond viewport bottom already.
+			if(difference > 0) {
+				contentDiv.css("min-height", contentDiv.outerHeight() + difference);				
+			}
+		}
+	</script>
 </body>
 </html>

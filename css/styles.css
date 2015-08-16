@@ -1,53 +1,119 @@
-* {
-	font-family: "Verdana", "Ubuntu";
-}
 html {
+	font: 10px Arial;
 	height: 100%;
 }
 body {
-    	margin: 0;
-    	background-repeat: no-repeat;
-    	background-attachment: fixed;
+	font-size: 16px;
+	font-size: 1.6rem;
+    margin: 0;
 	height: 100%;
-
-	background: #BBB;
-	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#EAEBEB)); 
-	background: -webkit-linear-gradient(top, #EAEBEB, #FFF); 
-	background: -moz-linear-gradient(top, #888, #DDD); 
-	background: -ms-linear-gradient(top, #EAEBEB, #FFF); 
-	background: -o-linear-gradient(top, #EAEBEB, #FFF);
+	background: #EAEAEA;
 }
+
+/*-------------------------------------------------------------------------*/
+/* =HEADER                                                                 */
+/*-------------------------------------------------------------------------*/
 #title {
 	background: #FFF;
 	padding-bottom: 10px;
-	margin-bottom: 10px;
-	border-bottom-right-radius: 15% 90%;
-	border-bottom-left-radius: 15% 90%;
-	box-shadow: 0 10px 5px #555;
+	padding-bottom: 1rem;
+	margin-bottom: 40px;
+	margin-bottom: 4rem;
+	box-shadow: 0 3px 10px #888;
 	text-align: center;
-	
 }
+div.subTitle {
+	font-size: 25px;
+	font-size: 2.5rem;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+
+/*-------------------------------------------------------------------------*/
+/* =CONTENT                                                                */
+/*-------------------------------------------------------------------------*/
 #content {
-	margin: 2em;
+	margin: 30px auto;
+	margin: 3rem auto;
+	max-width: 1260px;
+	max-width: 126rem;
+	padding: 0 30px;
+	padding: 0 3rem;
 }
 h2 {
-	margin-bottom: 5px;
+	font-size: 20px;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 30px 0 10px 0;
+	margin: 3rem 0 1rem 0;
+}
+h2 + p, h2 + ul {
+	margin-top: 10px;
+	margin-top: 1rem;
 }
 img.full {
 	max-width: 100%;
 }
-img.towtruck {
-	float: right;
-	max-width: 50%;
-	margin-left: 2em;
+img.towTruckMobile {
+	max-width: 100%;
+	margin: 20px 0;
+	margin: 2rem 0;
 }
-@media screen and (max-width:500px) {
-	img.towtruck {
-		float: none;
-		max-width: 100%;
-		margin: 0;
-	}
+img.towTruckTablet {
+	display: none;
 }
 .nomargin {
 	margin: 0;
+}
+
+/*-------------------------------------------------------------------------*/
+/* =FOOTER                                                                 */
+/*-------------------------------------------------------------------------*/
+footer {
+	background: #FFF;
+	box-shadow: 0 -2px 7px #888;
+	box-sizing: border-box;
+	display: block;
+	padding: 25px 5% 20px 5%;
+	padding: 2.5rem 5% 2rem 5%;
+	margin-top: 40px;
+	margin-top: 4rem;
+}
+footer > span {
+	display: block;
+	line-height: 1.5;
+	text-align: center;
+}
+
+
+/***************************************************************************/
+/* =TABLET                                                                 */
+/***************************************************************************/
+@media all and (min-width: 46.875em) {
+
+	img.towTruckMobile {
+		display: none;
+	}
+	img.towTruckTablet {
+		display: inline;
+		float: right;
+		max-width: 50%;
+		margin: 0 0 0 20px;
+		margin: 0 0 0 2rem;
+	}
+
+	/*-------------------------------------------------------------------------*/
+	/* =T_FOOTER                                                               */
+	/*-------------------------------------------------------------------------*/
+	footer {
+		overflow: auto;
+	}
+	footer > span.phone {
+		float: left;
+		text-align: left;
+	}
+	footer > span.hours {
+		float: right;
+		text-align: right;
+	}
 }
